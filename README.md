@@ -1,4 +1,4 @@
-<!-- An overview file for the dataset -->
+<!-- An overview of file for the dataset -->
 # Catchment-Characteristics-Database
 ## Catchment Characteristics Database development and publication
 
