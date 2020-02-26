@@ -10,6 +10,7 @@
 * Dataset has averaged values for a catchment 
 * Delineated our own catchments
 * The dataset consists 567 catchments and more than 160 characteristics.
+* India wide dataset is useful for the comparative hydrology in reginal studies
 
 ### Introduction 
 A catchment is a basic hydrological unit for anyone who works with naturally flowing water. Each catchment is unique and has specific characteristics. We found there is no such dataset available by which we can characterize the catchment completely. For the United States, a catchment dataset Falcone [Falcone, 2011] provides in-depth knowledge of more than 6000 United States catchments. Falcone data used in numerous studies and proven to be very useful. We are unable to find such a database for India, will use in future research which required rich physio-climatic characteristics for India catchments. We try to keep dataset processing and collection steps as transparent as possible. Methods and algorithms are used to develop this dataset, are carefully presented in this document.
