@@ -25,10 +25,3 @@ Download 'Deshmukh-Singh.bib'
 Cite as: *Deshmukh & Singh, 2020*
 
 Deshmukh, A., & Singh, R. (2020). PCCDI: Physio-Climatic Characteristics Dataset for India. Unpublished, 00(0), 00–00.
-=======
-
-## Citation
-Download 'Deshmukh-Singh.bib'
-Cite as: Deshmukh & Singh, 2020
-
-Deshmukh, A., & Singh, R. (2020). PCCDI: Physio-Climatic Characteristics Dataset for India. Unpublished, 00(0), 00–00.
