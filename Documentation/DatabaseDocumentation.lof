@@ -1,0 +1,11 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Basic approach of data extraction\relax }}{6}{figure.caption.5}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces 27 STRM digital elevation model (DEM) tiles are used for watershed delineation.\relax }}{7}{figure.caption.6}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Boundaries for selected catchment are show in the figure. Each circle represents the pour point of a catchment. Colors of pour point and corresponding catchment boundary are same. Histogram represents the area's of catchments. The color gradient sky blue to red represent increasing area of catchments.\relax }}{9}{figure.caption.7}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Daily precipitation layer rasterize then shapefile is overlapped to extract the values of precipitation\relax }}{11}{figure.caption.8}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Rasterised temperature overlapped with shapefiles to extract the daily temperature.\relax }}{12}{figure.caption.9}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces UTM projection zones used for India\relax }}{13}{figure.caption.10}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Extraction of stream order from raster.\relax }}{14}{figure.caption.11}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Dataset for land cover\relax }}{15}{figure.caption.12}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Dataset for land use\relax }}{17}{figure.caption.15}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Porosity map for India\relax }}{18}{figure.caption.16}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Topographic index for a catchment.\relax }}{19}{figure.caption.17}% 

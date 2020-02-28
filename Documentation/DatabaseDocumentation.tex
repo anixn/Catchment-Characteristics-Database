@@ -33,6 +33,8 @@
   breakatwhitespace=true,
   tabsize=4
 }
+
+\DeclareUnicodeCharacter{2212}{-}
 \usepackage[authoryear]{natbib}
 \usepackage{xcolor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,9 +50,9 @@
 \lstlistoflistings \clearpage
 
 \section{Introduction}\label{sec:Intro} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A catchment is a basic hydrological unit for anyone who works with naturally flowing water. Each catchment is unique and has specific characteristics. We found there is no such dataset available by which we can characterize the catchment completely. For the United States, a catchment dataset Falcone [Citation] provides in-depth knowledge of more than 6000 United States catchments. Falcone data used in numerous studies and proven to be very useful. We are unable to find such a database for India, will use in future research which required rich physio-climatic characteristics for India catchments. We try to keep dataset processing and collection steps as transparent as possible. Methods and algorithms are used to develop this dataset, are carefully presented in this document.
+A catchment is the most fundamental hydrological unit of naturally flowing water in the land. Each catchment is unique and has specific characteristics. We found there is no such dataset available by which we can characterize the catchment completely. For the United States, a catchment characteristics dataset Falcone [Falcone, 2011] provides information of more than 6000 catchments. Falcone data used in numerous studies and proven to be very useful. We are unable to find such kind of database for India. This dataset will be valuable for the future research that require physio-climatic characteristics for India catchments. We try to keep dataset processing and collection steps as transparent as possible. Methods and algorithms are used to develop this dataset, are carefully presented in "./Documentation/DatabaseDocumentation.pdf" document.
 
-The dataset is called \emph{Physio-climatic characteristics for India}. We present the dataset into the following sub-categories,(1) Climate, (2) Geology, (3) Hydrologic, (4) Land cover, (5) Land use, (6) Socioeconomic, and (7) Topographic. Each sub-category has several characteristics and the summary of each characteristic is shown in the Index sheet of the dataset. Index sheet has fields like Name, description, method of data preparation, data units, data source citation. We want to add as many characteristics we are able to find in the Falcone dataset. 
+The dataset is called \emph{Physio-climatic characteristics for India}\footnote{Citation: Deshmukh, A., & Singh, R. (2020). PCCDI: Physio-Climatic Characteristics Dataset for India. \textit{Unpublished}, 00(0), 00–00.}. We present the dataset into the following sub-categories,(1) Climate, (2) Geology, (3) Hydrologic, (4) Land cover, (5) Land use, (6) Socioeconomic, and (7) Topographic. Each sub-category has several characteristics and the summary of each characteristic is shown in the Index sheet of the dataset. Index sheet has fields like Name, description, method of data preparation, data units, data source citation. We want to add as many characteristics we are able to find in the Falcone dataset. 
 Our basic approach to get the data is to crop a raster with shape file and then take a weighted mean of the characteristics. Basic working of data extraction is shown in the Figure \ref{fig:Downscl}. 
 \begin{figure}[!h]
 \centering
@@ -266,7 +268,7 @@ The socioeconomic dataset is the collection of characteristics represents human 
 All the data is available in the raster grid format, we process it by cropping the raster with shapefile and the compute weight age average for each pixel to get mean characteristic values for each catchment.  
 
 \subsection{Soil} 
-We acquire soil characteristics from SoilGrids1km — Global Soil Information Based on Automated Mapping. Soil grid data is available in 6 layers (0-5cm, 5-15cm, 15-30cm, 30-60cm, 60-100cm, 100-200cm) and it consists soil, organic carbon (g kg$^−1$), soil pH, sand, silt and clay fractions (\%), bulk density (kg m$^−3$), cation-exchange capacity (cmol+/kg), coarse fragments (\%), soil organic carbon stock (t ha$^−1$). \citet{hengl2014soilgrids1km} develop the dataset and can be obtained freely from \href{https://soilgrids.org/}{Soilgrid}. We also gather permeability and porosity data form GLobal HYdrogeology MaPS (GLHYMPS) of permeability and porosity \citep{gleeson2014glimpse}
+We acquire soil characteristics from SoilGrids1km — Global Soil Information Based on Automated Mapping. Soil grid data is available in 6 layers (0-5cm, 5-15cm, 15-30cm, 30-60cm, 60-100cm, 100-200cm) and it consists soil, organic carbon (g kg$^{-1}$), soil pH, sand, silt and clay fractions (\%), bulk density (kg m$^{−3}$), cation-exchange capacity (cmol+/kg), coarse fragments (\%), soil organic carbon stock (t ha$^{−1}$). \citet{hengl2014soilgrids1km} develop the dataset and can be obtained freely from \href{https://soilgrids.org/}{Soilgrid}. We also gather permeability and porosity data form GLobal HYdrogeology MaPS (GLHYMPS) of permeability and porosity \citep{gleeson2014glimpse}
 
 \subsubsection{Soil fractions} 
 We extract soil fraction and chemical characteristics form SoilGrids1km dataset. We use layers of the mean depth of available soil products such as for soil organic carbon we use a layer of soil at 2.5 cm (mean of 0 to 5cm). The dataset provided in the raster grid. We extract with mean values of characteristics with weighted pixel values covered by catchment shapefiles. 
@@ -321,51 +323,51 @@ SN & Indices & SN & Indices          & SN & Indices         \\ \hline
 
 \clearpage
 \section{Code blocks for data processing (Listenings)} \label{sec:CodeBlocks}
-\lstinputlisting[language=R,label = lst:catDel, caption = Catchment delineation process with arcpy]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/CatchmentDelineation/CatchmentDelineation.py} 
+\lstinputlisting[language=R,label = lst:catDel, caption = Catchment delineation process with arcpy]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/CatchmentDelineation/CatchmentDelineation.py} 
 
-\lstinputlisting[language = R,label = lst:printCat, caption = Plotting: Gauges stations boundaries selected for database. Histogram shows variation of catchment area.]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/CatchmentDelineation/Plotting_IndiaCatchments_PP.R}
+\lstinputlisting[language = R,label = lst:printCat, caption = Plotting: Gauges stations boundaries selected for database. Histogram shows variation of catchment area.]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/CatchmentDelineation/Plotting_IndiaCatchments_PP.R}
 
-\lstinputlisting[language = R, label = lst:precipDaily, caption = Downscale gridded precipitation data to catchment scale]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Precipiation/PrecipitationExtractionLinear.R}
+\lstinputlisting[language = R, label = lst:precipDaily, caption = Downscale gridded precipitation data to catchment scale]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Precipiation/PrecipitationExtractionLinear.R}
 
-\lstinputlisting[language = R, label = lst:precipMonthly, caption = Convert daily precipitation data to monthly data]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Precipiation/PrecipitationExtractionMonthly.R}
+\lstinputlisting[language = R, label = lst:precipMonthly, caption = Convert daily precipitation data to monthly data]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Precipiation/PrecipitationExtractionMonthly.R}
 
-\lstinputlisting[language = R, label = lst:precipChar, caption = Compute precipitation based characteristics]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Precipiation/PrecipitationDerivatives.R}
+\lstinputlisting[language = R, label = lst:precipChar, caption = Compute precipitation based characteristics]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Precipiation/PrecipitationDerivatives.R}
 
-\lstinputlisting[language = R, label = lst:tempDaily, caption = Downscale gridded temperature data to catchment scale]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Temperature/TemperatureExtractionDaily.R}
+\lstinputlisting[language = R, label = lst:tempDaily, caption = Downscale gridded temperature data to catchment scale]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Temperature/TemperatureExtractionDaily.R}
 
-\lstinputlisting[language = R,label = lst:tempMonthly,caption = Convert daily temperature data to monthly data]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Temperature/TemperatureExtractionMonthly.R}
+\lstinputlisting[language = R,label = lst:tempMonthly,caption = Convert daily temperature data to monthly data]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Temperature/TemperatureExtractionMonthly.R}
 
-\lstinputlisting[language = R,label = lst:tempChar,caption = Compute temperature based characteristics]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Temperature/TemperatureDevivatives.R}
+\lstinputlisting[language = R,label = lst:tempChar,caption = Compute temperature based characteristics]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Temperature/TemperatureDevivatives.R}
 
-\lstinputlisting[language = R,label = lst:leapYr, caption = A function to compute leap year]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Temperature/Evapotranspiration/is.leapyear.R}
+\lstinputlisting[language = R,label = lst:leapYr, caption = A function to compute leap year]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Temperature/Evapotranspiration/is.leapyear.R}
 
-\lstinputlisting[language = R,label = lst:solRad,caption = A function to compute solar radiation]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Temperature/Evapotranspiration/solar_rad.R}
+\lstinputlisting[language = R,label = lst:solRad,caption = A function to compute solar radiation]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Temperature/Evapotranspiration/solar_rad.R}
 
-\lstinputlisting[language = R,label = lst:hamon,caption = Compute evapotranspiration using Hamon equation]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Temperature/Evapotranspiration/hamon.R}
+\lstinputlisting[language = R,label = lst:hamon,caption = Compute evapotranspiration using Hamon equation]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Temperature/Evapotranspiration/hamon.R}
 
-\lstinputlisting[language = R,label = lst:harg,caption = Compute evapo transpiration using hargreaves equation]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Temperature/Evapotranspiration/hargreaves.R}
+\lstinputlisting[language = R,label = lst:harg,caption = Compute evapo transpiration using hargreaves equation]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Temperature/Evapotranspiration/hargreaves.R}
 
-\lstinputlisting[language = R, label= lst:geology,caption=Code I use to get geological characteristics]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Geology/GeologyExt.R}
+\lstinputlisting[language = R, label= lst:geology,caption=Code I use to get geological characteristics]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Geology/GeologyExt.R}
 
-\lstinputlisting[language = R, label = lst:hydroProc,caption = To process DEM to get stream order and topographical properties]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Hyderology/DEM_Procession.R}
+\lstinputlisting[language = R, label = lst:hydroProc,caption = To process DEM to get stream order and topographical properties]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Hydrology/DEM_Procession.R}
 
-\lstinputlisting[language=R,label = lst:hydroExt,caption= Extract hydrological characteristics using Grass GIS]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Hyderology/HydrologyExt.R}
+\lstinputlisting[language=R,label = lst:hydroExt,caption= Extract hydrological characteristics using Grass GIS]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Hydrology/HydrologyExt.R}
 
-\lstinputlisting[language = R, label = lst:lc,caption = Land cover extraction]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Landcover/LandcoverExt.R}
+\lstinputlisting[language = R, label = lst:lc,caption = Land cover extraction]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Landcover/LandcoverExt.R}
 
-\lstinputlisting[language = R,label = lst:lu,caption = Land use extraction]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Landuse/LandUseExt.R}
+\lstinputlisting[language = R,label = lst:lu,caption = Land use extraction]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Landuse/LandUseExt.R}
 
-\lstinputlisting[language = R,label = lst:socioEon,caption = Socio economic extracted with the following steps]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/SocioEconomic/SocioEconomicExt.R}
+\lstinputlisting[language = R,label = lst:socioEon,caption = Socio economic extracted with the following steps]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/SocioEconomic/SocioEconomicExt.R}
 
-\lstinputlisting[language = R,label = lst:soil,caption = Various soil layers for extraction]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Soil/SoilProcessing.R}
+\lstinputlisting[language = R,label = lst:soil,caption = Various soil layers for extraction]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Soil/SoilProcessing.R}
 
-\lstinputlisting[language = R, label = lst:porPer,caption = Porosity and permeability dataset extraction]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Soil/SoilProcessing_PorPer.R}
+\lstinputlisting[language = R, label = lst:porPer,caption = Porosity and permeability dataset extraction]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Soil/SoilProcessing_PorPer.R}
 
-\lstinputlisting[language = R,label = lst:topoExt,caption = Topographical characteristics extraction]{D:/AnkitDeshmukh/GoogleDrive/Database01/Database101/Topography/TopographyExt.R}
+\lstinputlisting[language = R,label = lst:topoExt,caption = Topographical characteristics extraction]{C:/Users/ankit/Documents/Catchment-Characteristics-Database/Topography/TopographyExt.R}
 
 %% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \bibliographystyle{plainnat}
-\bibliography{Bibliography}
+\bibliography{Bibliography.bib}
 \end{document}
 
