@@ -2,7 +2,7 @@
 # Physio-Climatic Characteristics Dataset for India - v1.0
 ## Catchment Characteristics Database development and publication
 
-Dataset is an MS-Excel file "Catchment-Characteristics-Database-v1.0.xlsx". The spread sheet has multiple sheets inside. First sheed is "Index" has summary about all the data filed header. The data is free to use with proper citation. 
+Dataset is an MS-Excel file "Catchment-Characteristics-Database-v1.0.xlsx". The spread sheet has multiple sheets inside. First sheet is "Index" has summary of all the data file headers. The data is free to use with proper citation to author. 
 
 ### Outline of the database building
 * Various categories for data.
