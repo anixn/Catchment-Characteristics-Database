@@ -19,9 +19,12 @@ A catchment is the most fundamental hydrological unit of naturally flowing water
 
 The dataset is called **Physio-Climatic Characteristics  Dataset for India**. We present the dataset into the following sub-categories,(1) Climate, (2) Geology, (3) Hydrologic, (4) Land cover, (5) Land use, (6) Socioeconomic, and (7) Topographic. Each sub-category has several characteristics and the summary of each characteristic is shown in the Index sheet of the dataset. Index sheet has fields like Name, description, method of data preparation, data units, data source citation. We want to add as many characteristics we are able to find in the Falcone dataset. Our basic approach to get the data is to crop a raster with shape file and then take a weighted mean of the characteristics.
 
-### Citation
+### Future work and scope of the study
+
+### Citation 
 Download 'Deshmukh-Singh.bib'
 
 Cite as: *Deshmukh & Singh, 2020*
 
 Deshmukh, A., & Singh, R. (2020). PCCDI: Physio-Climatic Characteristics Dataset for India. Unpublished, 00(0), 00–00.
+
